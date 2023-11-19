@@ -225,21 +225,27 @@ input:focus {
 
 .note {
   background: white;
-  width: 240px;
+  width: 250px;
   margin: 10px;
   border: 1px solid #e0e1e0;
   border-radius: 8px;
   position: relative;
+  padding: 15px;
 }
 
 .note .title {
   width: 100%;
-  margin: 15px 0 0 15px;
+  letter-spacing: .00625em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  padding-top: 12px;
 }
 
 .note .text {
   width: 100%;
-  margin: 10px 0 0 15px;
+
 }
 
 .note .note-footer {
