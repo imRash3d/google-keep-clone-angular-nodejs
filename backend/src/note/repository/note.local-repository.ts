@@ -1,5 +1,5 @@
-import { NoteEntity } from "../../domain/note.entity";
-import { INoteRepository } from "./note.repository.interface";
+import { NoteEntity } from "../note.entity";
+import { INoteRepository } from "../note.repository.interface";
 
 export class NoteInMemoryRepository implements INoteRepository {
 

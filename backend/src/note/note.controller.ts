@@ -1,20 +1,21 @@
-import Icontroller from "../../shared/abstraction/controller.interface";
+import IController from "../shared/abstraction/controller.interface";
 
 import { NextFunction, Request, Response, Router } from "express";
-import { NoteService } from "../application/services/note.service";
-import { Note, createNoteReq } from "../contracts/note.model";
-import CommandResponse from "../../shared/abstraction/command-response";
+import { NoteService } from "./note.service";
+import { Note, createNoteReq } from "./note.model";
+import CommandResponse from "../shared/abstraction/command-response";
 
 
-export default class NoteController implements Icontroller {
-    path: string;
-    router: Router = Router();
-
+export default class NoteController implements IController {
+    path = '/note';
+    router = Router();
     constructor(
         private readonly noteService: NoteService
     ) {
 
 
+        this.router.post(`${this.path}`, this.createNote); // create  
+        this.router.get(`${this.path}`, this.getNotes); // fetch   
     }
 
 
@@ -56,8 +57,6 @@ export default class NoteController implements Icontroller {
         next: NextFunction
     ) {
         try {
-            const validateReq = await createNoteReq.parse(req.body);
-
             const result = await this.noteService.GetNotes();
             const response = new CommandResponse<Note[]>(result);
             res.status(201)
@@ -67,6 +66,7 @@ export default class NoteController implements Icontroller {
 
         catch (err) {
 
+            console.log(err)
             res.status(422);
             return res.json(
                 new CommandResponse<Note>(null, ["faled to get notes "])

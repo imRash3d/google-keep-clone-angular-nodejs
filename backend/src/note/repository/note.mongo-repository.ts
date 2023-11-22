@@ -1,5 +1,6 @@
-import { NoteEntity } from "../../domain/note.entity";
-import { INoteRepository } from "./note.repository.interface";
+import { NoteEntity } from "../note.entity";
+import { INoteRepository } from "../note.repository.interface";
+
 
 export class NoteMongoRepository implements INoteRepository {
     async create(title: string, content: string): Promise<NoteEntity | null> {

@@ -1,5 +1,5 @@
 
-import { EntityBase } from "../../shared/abstraction/entitybase";
+import { EntityBase } from "../shared/abstraction/entitybase";
 
 export class NoteEntity extends EntityBase {
 
@@ -22,7 +22,7 @@ export class NoteEntity extends EntityBase {
         this.IsPinned = false;
         this.BackgroundColor = "";
         this.Images = [];
-    
+
 
     }
 

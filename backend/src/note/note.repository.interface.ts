@@ -1,4 +1,5 @@
-import { NoteEntity } from "../../domain/note.entity";
+import { NoteEntity } from "./note.entity";
+
 
 
 

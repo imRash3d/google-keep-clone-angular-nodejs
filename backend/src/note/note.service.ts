@@ -1,5 +1,6 @@
-import { Note } from "../../contracts/note.model";
-import { INoteRepository } from "../repository/note.repository.interface";
+import { Note } from "./note.model";
+import { INoteRepository } from "./note.repository.interface";
+
 
 
 export class NoteService {
